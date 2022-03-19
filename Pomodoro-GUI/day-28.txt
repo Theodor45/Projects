@@ -1,0 +1,6 @@
+In this day, i think i will be learning more about tkinter, which is not really important but just constantly focusing on
+problem solving is really important.
+I will be making a Promodoro GUI (as in the title) that gives you 25 min of work, and then a 5 min break,
+You repeat this process 4 times and then you get a 20 min break.
+
+This keeps your motivation up and helps you remember more clearly everything you learned.

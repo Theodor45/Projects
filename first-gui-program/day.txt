@@ -1,0 +1,5 @@
+This is day-27 in the python course but i've done it in the same 'real' day as
+day 26.
+Here i will be making my second tkinter program (i made a few others in the past) but this one is better.( Way better)
+
+I'll learn about Tkinter, *args, **kwargs, etc.   # Important stuff

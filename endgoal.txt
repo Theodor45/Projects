@@ -1,0 +1,3 @@
+My end goal of this directory is to complete not only my python, css, html course, but to also learn other things such as
+libraries and modules. I want to learn git, docker, frameworks and other technologies here.
+Currently, i am at day-26 in my python course.
