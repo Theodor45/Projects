@@ -98,9 +98,17 @@ except ValueError:
     print("Enter a valid number!!")
 
 # There is also:
-raise
 lambda a, b : a * b
 
 # But i don't know what this does yet
 
+# With raise you can give out your own exceptions
+# whenever you want to.
+# Exemple
+
+def get(what_to_get, how_many):
+    if how_many > 5:
+        raise Exception('Too many!')
+    elif len(what_to_get.lower()) > 25:
+        raise Exception('no')
 
