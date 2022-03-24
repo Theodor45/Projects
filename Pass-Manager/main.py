@@ -1,6 +1,29 @@
 from tkinter import *
+import pyperclip
+import random
+import string
 import json
+import signal
+import sys
+
+def sigint_handler(signal, frame):
+    print('Bye!!')
+    sys.exit(0)
+signal.signal(signal.SIGINT, sigint_handler)
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
+
+def generate_password():
+    password_entry.delete(0, END)
+    symbols = string.punctuation
+    numbers = string.digits
+    lower_case = string.ascii_lowercase
+    upper_case = string.ascii_uppercase
+    characters = [symbols, numbers, lower_case, upper_case]
+    password = []
+    for f in range(10):
+        thing = random.choice(characters)
+        password.append(random.choice(thing))
+    password_entry.insert(0, ''.join(password))
 
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 def save_data():
@@ -9,15 +32,21 @@ def save_data():
     website = website_entry.get()
     if password=='' or email=='' or website=='':
         raise Exception("Don't leave the entry blank!")
-    data = {
+
+    new_data = {
         website: {
             "email": email,
             "password": password
             }
         }
 
-    with open("data.json", mode='r+') as f:
-        json.update(data, f, indent=4)
+    with open('data.json', mode='r') as data_file:
+        data = json.load(data_file)
+        data.update(new_data)
+    with open('data.json', mode='w') as data_file:
+        json.dump(data, data_file, indent=4)
+    copy = pyperclip.copy(password)
+    paste = pyperclip.paste()
     website_entry.delete(0, END)
     password_entry.delete(0, END)
 # ---------------------------- UI SETUP ------------------------------- #
@@ -49,26 +78,17 @@ website_entry.focus()
 
 info_entry = Entry(width=35)
 info_entry.grid(row=2, column=1, columnspan=2)
-info_entry.insert(0, 'puzzleaheaded.pea.683@gmail.com')
+info_entry.insert(0, 'daddy@gmail.com')
 
 password_entry = Entry(width=20)
 password_entry.grid(row=3, column=1)
 
 # Making the buttons
 
-generate_pass = Button(text="Generate Password", )
+generate_pass = Button(text="Generate Password", command=generate_password)
 generate_pass.grid(row=3, column=2)
 
 add_button = Button(text='Add', width=36, command=save_data)
 add_button.grid(row=4, column=1, columnspan=2)
-
-
-
-
-
-
-
-
-
 
 screen.mainloop()
