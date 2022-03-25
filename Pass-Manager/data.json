@@ -1,14 +1,15 @@
 {
-    "Youtube": {
-        "email": "daddy@gmail.com",
-        "password": "8d35<'_3CG"
+    "results": {
+        "sunrise": "7:17:29 PM",
+        "sunset": "7:23:06 AM",
+        "solar_noon": "1:20:17 AM",
+        "day_length": "12:05:37",
+        "civil_twilight_begin": "6:56:46 PM",
+        "civil_twilight_end": "7:43:49 AM",
+        "nautical_twilight_begin": "6:31:23 PM",
+        "nautical_twilight_end": "8:09:12 AM",
+        "astronomical_twilight_begin": "6:05:57 PM",
+        "astronomical_twilight_end": "8:34:38 AM"
     },
-    "rdttrd": {
-        "email": "daddy@gmail.com",
-        "password": "+09B4;]2E#"
-    },
-    "adfae": {
-        "email": "daddy@gmail.com",
-        "password": "WG1d?Biwwy"
-    }
+    "status": "OK"
 }
